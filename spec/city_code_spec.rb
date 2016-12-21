@@ -14,11 +14,11 @@ describe JpCityCode::CityCode do
 
   describe '.find' do
     let(:city) { JpCityCode::CityCode.find('011002') }
-    it { expect(city.city_code) ==  '011002' }
-    it { expect(city.prefecture_name) == '北海道' }
-    it { expect(city.city_name) == '札幌市' }
-    it { expect(city.prefecture_name_k) == 'ﾎｯｶｲﾄﾞｳ' }
-    it { expect(city.city_name_k) == 'ｻｯﾎﾟﾛｼ' }
+    it { expect(city.city_code).to eq '011002' }
+    it { expect(city.prefecture_name).to eq '北海道' }
+    it { expect(city.city_name).to eq '札幌市' }
+    it { expect(city.prefecture_name_k).to eq 'ﾎｯｶｲﾄﾞｳ' }
+    it { expect(city.city_name_k).to eq 'ｻｯﾎﾟﾛｼ' }
 
     let(:city2) { JpCityCode::CityCode.find('000000') }
     it { expect(city2).to be_nil }
